@@ -22,7 +22,7 @@ public class DemoApplication {
     @GetMapping
     public List<Order> getOrder() {
         return orderDao.getOrders().stream().
-                sorted(Comparator.comparing(Order::getId)).collect(Collectors.toList());
+                sorted(Comparator.comparing(Order::getPrice)).collect(Collectors.toList());
     }
 
     public static void main(String[] args) {
